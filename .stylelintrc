@@ -1,0 +1,8 @@
+{
+  "extends": ["stylelint-config-recommended-scss", "stylelint-config-recess-order"],
+  "rules": {
+    "indentation": 2,
+    "selector-list-comma-newline-after": "always",
+    "selector-list-comma-space-after": "always-single-line"
+  }
+}
