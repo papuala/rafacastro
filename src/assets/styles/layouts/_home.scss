@@ -3,176 +3,176 @@
   margin: 0;
 }
 
-body {
+/** ESTRUCTURA **/
+
+//Capçalera
+.header {
+  height: 80px;
+}
+
+//Contingut pàgina
+.content {
+  max-width: 90%;
+  margin: auto;
+}
+
+//Blocs de contingut
+.block {
+  align-items: center;
+  min-height: 300px;
+  margin-block: 40px;
+}
+
+//Títol
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//Galeria d'imatges
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.image {
+  height: 400px;
+  background-size: cover;
+}
+
+//Llistes
+.list-item {
+  display: inline;
+  padding-top: 30px;
+  list-style: none;
+}
+
+//Presentació
+.presentation {
+  padding-right: 160px;
+  padding-left: 50px;
+  margin-block: auto;
+}
+
+//Botó tornar a l'inici de la pàgina
+.button {
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  z-index: 99;
+  display: none;
+  height: 32px;
+  padding-inline: 10px;
+}
+
+//Footer
+.footer {
+  height: 80px;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 80px;
+}
+
+/** SKINS **/
+
+//Estils bàsics
+.general-style {
+  font-family: $font-family-sans-serif;
   text-align: center;
   background-color: $bg;
 }
 
-ul {
-  padding-top: 30px;
-  padding-left: 0;
-  list-style: none;
+//Fons foscos
+.dark-bg {
+  color: $light-color;
+  background-color: $contrast-color;
+
+  &.black-bg {
+    background-color: $dark-bg;
+  }
 }
 
-a {
+//Textos
+.text {
+  margin-block: 10px;
+  font-size: 16px;
+  line-height: 24px;
+
+  &.presentation {
+    text-align: left;
+  }
+}
+
+//Estils del links
+.link {
   margin: 0 20px;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-nav a:link, 
-nav a:visited {
-  color: white;
+.link:link,
+.link:visited {
+  &.contrast-color {
+    color: $contrast-color;
+  }
+
+  &.dark-bg {
+    color: $light-color;
+  }
 }
 
-header {
-  height: 80px;
-  background-color: $contrast-color;
-}
-
-header nav {
-  justify-items: center;
-  height: 100%;
-}
-
-li{
-  display: inline;
-}
-
-h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+//Títol
+.h1 {
   font-family: $font-family-serif;
   font-size: 80px;
   font-weight: 500;
   color: $contrast-color;
   text-transform: uppercase;
-  transform: translate(-50%, -50%);
 
-  @media (max-width: $mqMinWidth) {
+  @media (max-width: $mqPhone) {
     font-size: 36px;
   }
 }
 
-main {
-  max-width: 90%;
-  margin: auto;
-}
+//Fotos galeria
+#foto1 { background-image: url('../images/arboles.jpg'); }
 
-main > div {
-  width: 100%;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
+#foto2 { background-image: url('../images/aves.jpg'); }
 
-#galeria {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 5px;
-  margin: auto;
-}
+#foto3 { background-image: url('../images/bar.jpg'); }
 
-#galeria div {
-  height: 400px;
-  background-size: cover;
-}
+#foto4 { background-image: url('../images/benvinguts.jpg'); }
 
-#foto1 {
-  background-image: url("../images/arboles.jpg");
-}
-#foto2 {
-  background-image: url("../images/aves.jpg");
-}
-#foto3 {
-  background-image: url("../images/bar.jpg");
-}
-#foto4 {
-  background-image: url("../images/benvinguts.jpg");
-}
-#foto5 {
-  background-image: url("../images/calle.jpg");
-}
-#foto6 {
-  background-image: url("../images/colliure.jpg");
-}
-#foto7 {
-  background-image: url("../images/curva.jpg");
-}
-#foto8 {
-  background-image: url("../images/escalera.jpg");
-}
-#foto9 {
-  background-image: url("../images/estrellas.jpg");
-}
-#foto10 {
-  background-image: url("../images/mirador.jpg");
-}
+#foto5 { background-image: url('../images/calle.jpg'); }
 
-#sobre-mi {
+#foto6 { background-image: url('../images/colliure.jpg'); }
+
+#foto7 { background-image: url('../images/curva.jpg'); }
+
+#foto8 { background-image: url('../images/escalera.jpg'); }
+
+#foto9 { background-image: url('../images/estrellas.jpg'); }
+
+#foto10 { background-image: url('../images/mirador.jpg'); }
+
+//Cantonades arrodonides
+.rounded { 
   display: flex;
-  background-color: $contrast-color;
-  border-radius: 400px;
+  border-radius: 400px; 
 }
 
-#sobre-mi img {
-  height: 400px;
-  border-radius: 100%;
-}
-
-#sobre-mi div {
-  padding-right: 60px;
-  padding-left: 40px;
-  margin-top: auto;
-  margin-bottom: auto;
-  font-size: 16px;
-  line-height: 20px;
-  text-align: left;
-}
-
-#sobre-mi p {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#contacto span {
-  font-size: 24px;
-}
-
-#contacto a:link, 
-#contacto a:visited {
-  color: $contrast-color;
-}
-
-#contacto a:hover span{
-  transform: scale(1.2);
-}
-
-button {
-  position: fixed; /* Fixed/sticky position */
-  right: 30px; /* Place the button 30px from the right */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  z-index: 99; /* Make sure it does not overlap */
-  display: none; /* Hidden by default */
-  height:32px;
-  padding: 0 10px;
-  font-size:14px;
+//Botó
+.button-style {
+  font-size: 14px;
   color: $contrast-color;
   cursor: pointer;
-  background-color: transparent;
   border: 1px solid $contrast-color;
   border-radius: 32px;
-  transition: all 0.2s ease-in-out;
-}
-button:hover {
-  transform: scale(1.2);
+  transition: all .2s ease-in-out;
 }
 
-footer {
-  height: 80px;
-  margin-top: 10px;
-  font-size: 12px;
-  line-height: 80px;
-  color: white;
-  background-color: $dark-bg;
-}
+//Ampliar elements escalables al fer hover
+.scalable:hover { transform: scale(1.2); }

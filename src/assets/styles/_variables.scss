@@ -1,12 +1,21 @@
-@use "sass:color";
+@use 'sass:color';
 
+//Fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 
-$font-family-sans-serif: 'Roboto', sans-serif;
-$font-family-serif: "Georgia", "Times New Roman", serif;
+$font-family-sans-serif: 'Roboto', Arial, sans-serif;
+$font-family-serif: 'Roboto Slab', 'Times New Roman', serif;
 
-$bg: rgb(255, 255, 255);
-$dark-bg: rgb(0,0,0);
-$contrast-color: rgb(18, 71, 57);
+//Colors
+$bg: rgb(255 255 255);
+$dark-bg: rgb(0 0 0);
+$light-color: rgb(255 255 255);
+$dark-color: rgb(0 0 0);
+$contrast-color: rgb(18 71 57);
 
-$mqMinWidth: 200px;
+//Media queries widths
+$mqPhone: 576px;
+$mqTablet: 768px;
+$mqLaptop: 992px;
+$mqDesktop: 1200px;
