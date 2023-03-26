@@ -6,36 +6,57 @@
 /** ESTRUCTURA **/
 
 //Capçalera
-.header {
-  height: 80px;
-}
+.header { height: 80px; }
 
 //Contingut pàgina
 .content {
   max-width: 90%;
+  padding: 0;
   margin: auto;
 }
 
 //Blocs de contingut
 .block {
   align-items: center;
-  min-height: 300px;
   margin-block: 40px;
 }
 
-//Títol
-.title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+//Llistes
+.list {
+  display: flex;
+  justify-content: center;
+  padding: 0;
 }
+
+.list-item {
+  padding-top: 30px;
+  list-style: none;
+}
+
+//Title
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo { max-width: 50%; }
 
 //Galeria d'imatges
 .gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 5px;
+
+  @media (min-width: $mqTablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: $mqLaptop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (min-width: $mqDesktop) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 
 .image {
@@ -43,18 +64,28 @@
   background-size: cover;
 }
 
-//Llistes
-.list-item {
-  display: inline;
-  padding-top: 30px;
-  list-style: none;
+//Presentació
+.block.rounded { padding: 30px; }
+
+.profile-img {
+  max-width: 100%;
+  padding: 20px;
+
+  @media (min-width: $mqTablet) {
+    max-width: 550px;
+  }
+  @media (min-width: $mqLaptop) {
+    max-width: 40%;
+  }
 }
 
-//Presentació
 .presentation {
-  padding-right: 160px;
-  padding-left: 50px;
+  padding: 25px;
   margin-block: auto;
+
+  @media (min-width: $mqDesktop) {
+    padding-inline: 80px;
+  }
 }
 
 //Botó tornar a l'inici de la pàgina
@@ -70,10 +101,8 @@
 
 //Footer
 .footer {
-  height: 80px;
+  height: 70px;
   margin-top: 10px;
-  font-size: 12px;
-  line-height: 80px;
 }
 
 /** SKINS **/
@@ -97,18 +126,20 @@
 
 //Textos
 .text {
-  margin-block: 10px;
+  padding-block: 10px;
   font-size: 16px;
   line-height: 24px;
 
   &.presentation {
-    text-align: left;
+    @media (min-width: $mqTablet) {
+      text-align: left;
+    }
   }
 }
 
 //Estils del links
 .link {
-  margin: 0 20px;
+  margin-inline: 20px;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -124,20 +155,27 @@
   }
 }
 
+//Menu
+.header .link:hover { color: $contrast-color-lighter; }
+
 //Títol
 .h1 {
-  font-family: $font-family-serif;
-  font-size: 80px;
+  font-family: $font-family-handwriting;
+  font-size: 60px;
   font-weight: 500;
-  color: $contrast-color;
-  text-transform: uppercase;
+  text-align: left;
 
-  @media (max-width: $mqPhone) {
-    font-size: 36px;
+  @media (min-width: $mqTablet) {
+    font-size: 90px;
+  }
+  @media (min-width: $mqLaptop) {
+    font-size: 120px;
   }
 }
 
 //Fotos galeria
+.image:hover { transform: scale(1.5); }
+
 #foto1 { background-image: url('../images/arboles.jpg'); }
 
 #foto2 { background-image: url('../images/aves.jpg'); }
@@ -156,19 +194,33 @@
 
 #foto9 { background-image: url('../images/estrellas.jpg'); }
 
-#foto10 { background-image: url('../images/mirador.jpg'); }
+#foto10 {
+  background-image: url('../images/mirador.jpg');
+
+  @media (min-width: $mqLaptop) and (max-width: $mqDesktop) {
+    display: none;
+  }
+}
 
 //Cantonades arrodonides
-.rounded { 
-  display: flex;
-  border-radius: 400px; 
+.rounded {
+  font-family: $font-family-serif;
+  border-radius: 100px;
+
+  @media (min-width: $mqLaptop) {
+    display: flex;
+  }
 }
+
+//Icones
+.icon { font-size: 30px; }
 
 //Botó
 .button-style {
   font-size: 14px;
   color: $contrast-color;
   cursor: pointer;
+  background-color: $contrast-color-lighter;
   border: 1px solid $contrast-color;
   border-radius: 32px;
   transition: all .2s ease-in-out;
@@ -176,3 +228,6 @@
 
 //Ampliar elements escalables al fer hover
 .scalable:hover { transform: scale(1.2); }
+
+//Text del footer
+.footer .text { font-size: 12px; }

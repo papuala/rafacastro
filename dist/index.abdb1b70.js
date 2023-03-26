@@ -557,14 +557,7 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"5Msky":[function(require,module,exports) {
-/**
- * Import dependencies from node_modules
- * see commented examples below
- */ // import 'some-node-module';
-// import SomeModule from 'some-node-module';
-/**
- * Write any other JavaScript below
- */ // Get the button:
+// Get the button:
 let topButton = document.getElementById("top-button");
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {
